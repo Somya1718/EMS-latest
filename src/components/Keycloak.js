@@ -122,26 +122,6 @@ export const directLogin = async (username, password) => {
   }
 };
 
-// export const logout = async () => {
-//   try {
-//     if (keycloak.authenticated) {
-//       // Clear local storage and state first
-//       localStorage.removeItem('authData');
-//       keycloak.clearToken();
-
-//       // Construct the logout URL with required parameters
-//       const logoutUrl = `${keycloakConfig.url}/realms/${keycloakConfig.realm}/protocol/openid-connect/logout`;
-//       const redirectUri = encodeURIComponent('http://localhost:3000/login');
-      
-//       // Redirect to Keycloak logout
-//       window.location.href = `${logoutUrl}?client_id=${keycloakConfig.clientId}&redirect_uri=${redirectUri}`;
-//     }
-//     return true;
-//   } catch (error) {
-//     console.error('Logout failed:', error);
-//     throw error;
-//   }
-// };
 export const logout = async () => {
   try {
     const logoutUrl = `${keycloakConfig.url}/realms/${keycloakConfig.realm}/protocol/openid-connect/logout`;

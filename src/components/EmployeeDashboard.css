@@ -1,8 +1,14 @@
 /* Main Container Styles */
 .dashboard-container {
+  margin-top: 200px;
   min-height: 100vh;
   background-color: #f8f9fa;
+  padding: 5rem;
+}
+
+.dashboard-content{
   padding: 2rem;
+
 }
 
 /* Header Section */
@@ -15,9 +21,6 @@
   border-radius: 12px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
-  position: sticky;
-  top: 1rem;
-  z-index: 100;
 }
 
 .dashboard-title {
@@ -26,14 +29,18 @@
   color: #2c3e50;
   margin: 0;
   background: linear-gradient(120deg, #2c3e50, #3498db);
-  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .header-actions {
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-top: -35px;
+  margin-left: 30px;
+  
 }
 
 /* Button Styles */
@@ -45,20 +52,39 @@
   cursor: pointer;
   border: none;
   font-size: 0.95rem;
-  display: flex;
+  display: inline-flex;  /* Changed to inline-flex */
   align-items: center;
   gap: 0.5rem;
+  opacity: 1 !important;  /* Ensure button is visible */
+  visibility: visible !important;  /* Ensure button is visible */
+}
+
+.dashboard-header .btn-logout {
+  background-color: #e74c3c !important;
+  color: white !important;
+  min-width: 100px;  /* Ensure minimum width */
+  display: inline-flex !important;  /* Ensure proper display */
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-logout {
   background-color: #e74c3c;
-  color: white;
+  color: rgb(247, 243, 38);
 }
 
 .btn-logout:hover {
-  background-color: #c0392b;
+  background-color: #c0392b !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .home-button {
@@ -85,6 +111,20 @@
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   padding: 2rem;
 }
+
+.dashboard-header {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 
 .dashboard-content h1 {
   color: #2c3e50;

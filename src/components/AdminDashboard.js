@@ -141,36 +141,25 @@ const AdminDashboard = () => {
   if (loading) {
     return <div className="loading">Loading...</div>;
   }
-  // const handleLogout = async () => {
-  //   try {
-  //     const isAdmin = true; // or false for employee dashboard
-  //     await ApiService.logout(isAdmin);
-  //     navigate('/login');
-  //   } catch (error) {
-  //     console.error('Error during logout:', error);
-  //     // Force navigation to login even if there's an error
-  //     navigate('/login');
-  //   }
-  // };
-
+  
   return (
-    <div className="dashboard-container">
-      <header className="dashboard-header">
+    <div className="admin-dashboard-container">
+      <header className="admin-dashboard-header">
         <h1>Admin Dashboard</h1>
-        <button className="btn btn-logout" onClick={handleLogout}>
+        <button className="admin-btn-logout" onClick={handleLogout}>
           Logout
         </button>
       </header>
 
-      <main className="dashboard-content">
-        <div className="actions-bar">
-          <button className="btn btn-primary" onClick={handleAdd}>
-            Add Employee
+      <main className="admin-dashboard-content">
+        <div className="admin-actions-bar">
+          <button className="admin-btn-primary" onClick={handleAdd}>
+            + Add Employee
           </button>
         </div>
 
-        <div className="employees-table-container">
-          <table className="employees-table">
+        <div className="admin-employees-table-container">
+          <table className="admin-employees-table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -187,15 +176,15 @@ const AdminDashboard = () => {
                   <td>{employee.name}</td>
                   <td>{employee.email}</td>
                   <td>{employee.role}</td>
-                  <td className="actions-cell">
+                  <td className="admin-actions-cell">
                     <button
-                      className="btn btn-edit"
+                      className="admin-btn-edit"
                       onClick={() => handleEdit(employee)}
                     >
                       Edit
                     </button>
                     <button
-                      className="btn btn-delete"
+                      className="admin-btn-delete"
                       onClick={() => handleDelete(employee.id)}
                     >
                       Delete
@@ -208,11 +197,11 @@ const AdminDashboard = () => {
         </div>
 
         {showModal && (
-          <div className="modal-overlay">
-            <div className="modal-content">
+          <div className="admin-modal-overlay">
+            <div className="admin-modal-content">
               <h2>{editingEmployee ? 'Edit Employee' : 'Add Employee'}</h2>
               <form onSubmit={handleSubmit}>
-                <div className="form-group">
+                <div className="admin-form-group">
                   <label htmlFor="name">Name:</label>
                   <input
                     type="text"
@@ -223,7 +212,7 @@ const AdminDashboard = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="admin-form-group">
                   <label htmlFor="email">Email:</label>
                   <input
                     type="email"
@@ -234,7 +223,7 @@ const AdminDashboard = () => {
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div className="admin-form-group">
                   <label htmlFor="role">Role:</label>
                   <input
                     type="text"
@@ -245,13 +234,13 @@ const AdminDashboard = () => {
                     required
                   />
                 </div>
-                <div className="form-actions">
-                  <button type="submit" className="btn btn-primary">
+                <div className="admin-form-actions">
+                  <button type="submit" className="admin-btn-primary">
                     Save
                   </button>
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="admin-btn-secondary"
                     onClick={() => setShowModal(false)}
                   >
                     Cancel
@@ -267,3 +256,4 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+

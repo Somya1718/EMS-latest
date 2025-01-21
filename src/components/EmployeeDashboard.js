@@ -76,20 +76,22 @@ const EmployeeDashboard = () => {
     <div className="dashboard-container">
       <SessionTimeout />
       
+      <div className="dashboard-content">
+
+      <h1>Welcome back, {userName}</h1>
+        
       <div className="dashboard-header">
+        
         <h1 className="dashboard-title">Employee Dashboard</h1>
         <div className="header-actions">
-          <button className="home-button" onClick={handleHomeClick}>
+          <button className="btn home-button" onClick={handleHomeClick}>
             Home
           </button>
           <button className="btn btn-logout" onClick={handleLogout}>
             Logout
           </button>
         </div>
-      </div>
-
-      <div className="dashboard-content">
-        <h1>Welcome back, {userName}</h1>
+      </div> 
         
         <div className="employees-table-container">
           <table className="employees-table">

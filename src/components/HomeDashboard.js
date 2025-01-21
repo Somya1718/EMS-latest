@@ -20,7 +20,8 @@ const HomeDashboard = () => {
       }
 
       try {
-        await ApiService.testConnection();
+        //await ApiService.testConnection();
+        await ApiService.getUserDetails();
       } catch (error) {
         console.error('Dashboard initialization failed:', error);
         if (error.response?.status === 401) {

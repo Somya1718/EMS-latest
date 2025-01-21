@@ -94,36 +94,36 @@ class ApiService {
   }
 
 //   // Auth and Logout
-//   static async logout(isAdmin = false) {
-//     try {
-//       const path = isAdmin ? 'admin' : 'employee';
-//       await axiosInstance.post(`/${path}/logout`);
+  static async logout(isAdmin = false) {
+    try {
+      const path = isAdmin ? 'admin' : 'employee';
+      await axiosInstance.post(`/${path}/logout`);
       
-//       // Clear local storage
-//       localStorage.removeItem('authData');
+      // Clear local storage
+      localStorage.removeItem('authData');
       
-//       // Logout from Keycloak
-//       await keycloak.logout();
+      // Logout from Keycloak
+      //await keycloak.logout();
       
-//       return 'Logged out successfully';
-//     } catch (error) {
-//       console.error('Logout failed:', error);
-//       throw error;
-//     }
-//   }
-
-static async logout(isAdmin = false) {
-  try {
-    const path = isAdmin ? 'admin' : 'employee';
-    
-    // Call backend logout endpoint
-    await axiosInstance.post(`/${path}/logout`);
-    return true;
-  } catch (error) {
-    console.error('API logout failed:', error);
-    throw error;
+      return 'Logged out successfully';
+    } catch (error) {
+      console.error('Logout failed:', error);
+      throw error;
+    }
   }
-}
+
+// static async logout(isAdmin = false) {
+//   try {
+//     const path = isAdmin ? 'admin' : 'employee';
+    
+//     // Call backend logout endpoint
+//     await axiosInstance.post(`/${path}/logout`);
+//     return true;
+//   } catch (error) {
+//     console.error('API logout failed:', error);
+//     throw error;
+//   }
+// }
 
 static clearAuthData() {
   try{
@@ -231,8 +231,6 @@ static async isSessionValid() {
   }
 
 }
-
-
 
 // Add global error handler for unauthorized requests
 axiosInstance.interceptors.response.use(
